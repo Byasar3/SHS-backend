@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "goalName": "Read a book",
+    "goalDescription": "Read at least one chapter daily",
+    "dateCreated": "2024-06-01",
+    "endDate": "2024-07-01",
+    "repeat": false
+  },
+  {
+    "id": 2,
+    "goalName": "Exercise",
+    "goalDescription": "Exercise for 30 minutes",
+    "dateCreated": "2023-05-01",
+    "endDate": "2023-05-31",
+    "repeat": true
+  }
+]
