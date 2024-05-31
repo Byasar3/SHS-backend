@@ -16,5 +16,24 @@ public class GoalsRepository {
 
     // READ
     // return all goals
-    public List<Goal>
+    public List<Goal> getAllGoals(){
+        return goals;
+    }
+
+    // return goal by id
+    public Goal getGoalById(long id){
+        for (Goal goal : goals){
+            if (goal.getId() == id){
+                return goal;
+            }
+        }
+        return null;
+    }
+
+    // UPDATE
+
+    // DELETE
+    public boolean deleteGoalById(long id){
+        return goals.removeIf(goal -> goal.getId() == id);
+    }
 }
