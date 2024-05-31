@@ -28,7 +28,7 @@ public class GoalsController {
     }
 
     // Get greeting by id
-    @GetMapping("/goals/{id}")
+    @GetMapping("/goal/{id}")
     public String getGoalById(@PathVariable int id){
         if (id > goals.size() - 1 || id < 0){
             return "NOT FOUND";
@@ -41,8 +41,8 @@ public class GoalsController {
     // DELETE
 
     // Delete greeting by id
-    @DeleteMapping("greeting/{id}")
-    public boolean deleteGreetingById(@PathVariable int id){
+    @DeleteMapping("goal/{id}")
+    public boolean deleteGoalById(@PathVariable int id){
         // CHECK BOUNDS
         if (id > goals.size() -1 || id < 0){
             return false;
