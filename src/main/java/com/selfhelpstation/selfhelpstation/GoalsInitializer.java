@@ -42,7 +42,7 @@ public class GoalsInitializer {
                 LocalDate endDate = (LocalDate) goalsJSON.get("end_date");
                 Boolean repeat = (boolean) goalsJSON.get("repeat");
 
-                goalsRepository.addGoal(new Goal(id, goalName, goalDescription, dateCreated, endDate, repeat));
+                goalsRepository.addGoal(new Goals(id, goalName, goalDescription, dateCreated, endDate, repeat));
             }
         }catch (Exception e) {
             e.printStackTrace();
