@@ -3,7 +3,7 @@ package com.selfhelpstation.selfhelpstation;
 import java.time.LocalDate;
 import java.util.Random;
 
-public class Goals {
+public class Goal {
 
     private long id = new Random().nextLong();
     private String goalName;
@@ -12,11 +12,11 @@ public class Goals {
     private LocalDate endDate;
     private boolean repeat;
 
-    public Goals(){
+    public Goal(){
 
     }
 
-    public Goals(long id, String goalName, String goalDescription, LocalDate dateCreated, LocalDate endDate, boolean repeat) {
+    public Goal(long id, String goalName, String goalDescription, LocalDate dateCreated, LocalDate endDate, boolean repeat) {
         this.id = id;
         this.goalName = goalName;
         this.goalDescription = goalDescription;

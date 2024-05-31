@@ -6,11 +6,15 @@ import java.util.List;
 public class GoalsRepository {
 
     // array list of goals
-    private final List<Goals> goals = new ArrayList<>();
+    private final List<Goal> goals = new ArrayList<>();
 
     // CREATE
     // add a goal
-    public void addGoal(Goals goal){
+    public void addGoal(Goal goal){
         goals.add(goal);
     }
+
+    // READ
+    // return all goals
+    public List<Goal>
 }

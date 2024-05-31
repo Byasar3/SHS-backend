@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import java.io.FileReader;
-import java.io.*;
 import java.time.LocalDate;
 
 @Component
@@ -42,7 +41,7 @@ public class GoalsInitializer {
                 LocalDate endDate = (LocalDate) goalsJSON.get("end_date");
                 boolean repeat = (boolean) goalsJSON.get("repeat");
 
-                goalsRepository.addGoal(new Goals(id, goalName, goalDescription, dateCreated, endDate, repeat));
+                goalsRepository.addGoal(new Goal(id, goalName, goalDescription, dateCreated, endDate, repeat));
             }
         }catch (Exception e) {
             e.printStackTrace();
