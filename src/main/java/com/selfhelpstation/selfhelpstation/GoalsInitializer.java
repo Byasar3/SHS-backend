@@ -37,8 +37,8 @@ public class GoalsInitializer {
                 long id = (long) goalsJSON.get("id");
                 String goalName = (String) goalsJSON.get("goal_name");
                 String goalDescription = (String) goalsJSON.get("goal_description");
-                LocalDate dateCreated = (LocalDate) goalsJSON.get("date_created");
-                LocalDate endDate = (LocalDate) goalsJSON.get("end_date");
+                LocalDate dateCreated = LocalDate.parse((String) goalsJSON.get("date_created"));
+                LocalDate endDate = LocalDate.parse((String) goalsJSON.get("end_date"));
                 boolean repeat = (boolean) goalsJSON.get("repeat");
 
                 goalsRepository.addGoal(new Goal(id, goalName, goalDescription, dateCreated, endDate, repeat));
