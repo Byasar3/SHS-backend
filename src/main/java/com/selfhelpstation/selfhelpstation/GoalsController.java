@@ -37,8 +37,9 @@ public class GoalsController {
     // DELETE
 
     // Delete greeting by id
-//    @DeleteMapping("goal/{id}")
-//    public boolean deleteGoalById(@PathVariable int id){
-//        return goalsService.deleteGoalById(id);
-//    }
+    @DeleteMapping("goal/{id}")
+    public String deleteGoalById(@PathVariable int id){
+        goalsService.deleteGoalById(id);
+        return "Goal has been deleted";
+    }
  }

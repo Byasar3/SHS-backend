@@ -36,6 +36,6 @@ public class GoalsService {
     // DELETE
     @Transactional
     public void deleteGoalById(long id){
-        // need repo method
+       goalsRepository.deleteGoalById(id);
     }
 }
