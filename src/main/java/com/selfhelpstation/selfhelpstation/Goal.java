@@ -1,28 +1,38 @@
 package com.selfhelpstation.selfhelpstation;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 import java.time.LocalDate;
 import java.util.Random;
 
+// creating an entity in db -> a table
+@Entity
 public class Goal {
 
-    private long id = new Random().nextLong();
+    // setting primary key and letting database auto increment the values
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     private String goalName;
     private String goalDescription;
     private LocalDate dateCreated = LocalDate.now();
     private LocalDate endDate;
-    private boolean repeat;
+    private boolean goalRepeat;
 
     public Goal(){
 
     }
 
-    public Goal(long id, String goalName, String goalDescription, LocalDate dateCreated, LocalDate endDate, boolean repeat) {
+    public Goal(long id, String goalName, String goalDescription, LocalDate dateCreated, LocalDate endDate, boolean goalRepeat) {
         this.id = id;
         this.goalName = goalName;
         this.goalDescription = goalDescription;
         this.dateCreated = dateCreated;
         this.endDate = endDate;
-        this.repeat = repeat;
+        this.goalRepeat = goalRepeat;
     }
 
     public long getId() {
@@ -66,10 +76,10 @@ public class Goal {
     }
 
     public boolean isRepeat() {
-        return repeat;
+        return goalRepeat;
     }
 
-    public void setRepeat(boolean repeat) {
-        this.repeat = repeat;
+    public void setRepeat(boolean goalRepeat) {
+        this.goalRepeat = goalRepeat;
     }
 }

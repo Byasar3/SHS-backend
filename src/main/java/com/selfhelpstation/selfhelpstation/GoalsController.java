@@ -3,19 +3,18 @@ package com.selfhelpstation.selfhelpstation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 public class GoalsController {
 
     @Autowired
-    GoalsRepository goalsRepository;
+    GoalsService goalsService;
 
     // CREATE
     @PostMapping("/goal")
     public Goal createGoal(@RequestBody Goal goal){
-        goalsRepository.addGoal(goal);
+        goalsService.addGoal(goal);
         return goal;
     }
 
@@ -24,13 +23,13 @@ public class GoalsController {
     // Get all the greetings
     @GetMapping("/goals")
     public List<Goal> getAllGoals(){
-        return goalsRepository.getAllGoals();
+        return goalsService.getAllGoals();
     }
 
     // Get greeting by id
     @GetMapping("/goal/{id}")
     public Goal getGoalById(@PathVariable int id){
-        return goalsRepository.getGoalById(id);
+        return goalsService.getGoalById(id);
     }
 
     // UPDATE
@@ -38,8 +37,8 @@ public class GoalsController {
     // DELETE
 
     // Delete greeting by id
-    @DeleteMapping("goal/{id}")
-    public boolean deleteGoalById(@PathVariable int id){
-        return goalsRepository.deleteGoalById(id);
-    }
+//    @DeleteMapping("goal/{id}")
+//    public boolean deleteGoalById(@PathVariable int id){
+//        return goalsService.deleteGoalById(id);
+//    }
  }
